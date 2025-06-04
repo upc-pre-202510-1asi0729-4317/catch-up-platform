@@ -4,6 +4,10 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
+import java.util.Date;
 
 @Entity
 @Getter
@@ -14,8 +18,22 @@ public class FavoriteSource {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     @NotNull
-    private String name;
+    private String newsApiKey;
+
+    @Column(nullable = false)
+    @NotNull
+    private String sourceId;
+
+    @Column(nullable = false, updatable = false)
+    @CreatedDate
+    private Date createdAt;
+
+    @Column(nullable = false)
+    @LastModifiedDate
+    private Date updatedAt;
+
+
 
 }
