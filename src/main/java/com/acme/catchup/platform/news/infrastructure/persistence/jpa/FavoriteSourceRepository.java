@@ -13,4 +13,6 @@ public interface FavoriteSourceRepository extends JpaRepository<FavoriteSource, 
     List<FavoriteSource> findAllByNewsApiKey(String newsApiKey);
 
     Optional<FavoriteSource> findByNewsApiKeyAndSourceId(String newsApiKey, String sourceId);
+
+    boolean existsByNewsApiKeyAndSourceId(String s, String s1);
 }
