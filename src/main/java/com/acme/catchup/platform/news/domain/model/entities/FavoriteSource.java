@@ -11,7 +11,6 @@ import java.util.Date;
 
 @Entity
 @Getter
-@Setter
 public class FavoriteSource {
 
     @Id
@@ -34,6 +33,6 @@ public class FavoriteSource {
     @LastModifiedDate
     private Date updatedAt;
 
-
+    protected FavoriteSource() {}
 
 }
